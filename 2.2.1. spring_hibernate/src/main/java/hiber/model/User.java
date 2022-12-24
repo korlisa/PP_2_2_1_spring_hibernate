@@ -18,9 +18,10 @@ public class User {
 
    @Column(name = "email")
    private String email;
+   @MapsId
    @OneToOne(cascade = CascadeType.ALL)
    @JoinColumn(name = "id")
-   private Car idCar;
+   private Car car;
 
    public User() {}
    
@@ -63,11 +64,11 @@ public class User {
    }
 
    public Car getIdCar() {
-      return idCar;
+      return car;
    }
 
-   public void setIdCar(Car idCar) {
-      this.idCar = idCar;
+   public void setIdCar(Car car) {
+      this.car = car;
    }
 
    @Override
@@ -77,7 +78,7 @@ public class User {
               ", firstName='" + firstName + '\'' +
               ", lastName='" + lastName + '\'' +
               ", email='" + email + '\'' +
-              ", idCar=" + idCar +
+              ", car=" + car +
               '}';
    }
 }
